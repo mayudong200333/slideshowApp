@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var Return: UIButton!
     
-    
     @IBOutlet weak var play_and_stop: UIButton!
     var timer:Timer!
     var timer_sec:Float=0
@@ -28,14 +27,18 @@ class ViewController: UIViewController {
         let image = images[index]
         imageView.image = image
     }
+    
+    
     @objc func updatepic(_ timer: Timer){
-    if self.index == 2 {
-    self.index = 0
-    } else {
-    self.index+=1
+        if self.index == 2 {
+            self.index = 0
+       } else {
+       self.index+=1
+       }
+       imageView.image = images[index]
     }
-    imageView.image = images[index]
-    }
+    
+    
     @IBAction func Next(_ sender: UIButton) {
         if self.index == 2 {
             self.index = 0
@@ -45,6 +48,7 @@ class ViewController: UIViewController {
         imageView.image = images[index]
     }
     
+    
     @IBAction func Return(_ sender: UIButton) {
         if self.index == 0 {
             self.index = 2
@@ -52,8 +56,9 @@ class ViewController: UIViewController {
             self.index-=1
         }
         imageView.image = images[index]
-
     }
+    
+    
     @IBAction func play_and_stop(_ sender: UIButton) {
         if self.timer == nil{
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updatepic(_:)), userInfo: nil, repeats: true)
@@ -69,10 +74,13 @@ class ViewController: UIViewController {
         }
         
     }
+    
   
     @IBAction func unwind(_ unwindSegue: UIStoryboardSegue ) {
-        
+
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ResultviewController:ResultViewController = segue.destination as! ResultViewController
          ResultviewController.image2 = self.images[self.index]
@@ -85,5 +93,6 @@ class ViewController: UIViewController {
         Next.isEnabled = true
         Return.isEnabled = true
     }
+    
 }
 
