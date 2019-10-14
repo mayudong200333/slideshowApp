@@ -22,22 +22,25 @@
                                 <rect key="frame" x="31" y="526" width="312" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXt-8A-wvb">
-                                        <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="oI6-8k-skO"/>
+                                        </constraints>
                                         <state key="normal" title="進む"/>
                                         <connections>
                                             <action selector="Next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VGK-Rb-fmR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXg-9t-ugV">
-                                        <rect key="frame" x="123" y="0.0" width="31" height="30"/>
+                                        <rect key="frame" x="158" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="戻る"/>
                                         <connections>
                                             <action selector="Return:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K3s-UL-7cU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZ1-68-Mmx">
-                                        <rect key="frame" x="246" y="0.0" width="66" height="30"/>
-                                        <state key="normal" title="再生/停止"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZ1-68-Mmx" userLabel="再生">
+                                        <rect key="frame" x="281" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="再生"/>
                                         <connections>
                                             <action selector="play_and_stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2jm-8h-3Aa"/>
                                         </connections>
@@ -60,13 +63,15 @@
                             <constraint firstItem="yMv-EV-7JE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="d2N-v4-GjR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yMv-EV-7JE" secondAttribute="bottom" constant="111" id="iQq-cU-2Mm"/>
                             <constraint firstItem="id2-g3-6IX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="nT4-1d-oBh"/>
-                            <constraint firstItem="yMv-EV-7JE" firstAttribute="top" secondItem="id2-g3-6IX" secondAttribute="bottom" constant="91" id="pDo-BV-DsD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yMv-EV-7JE" secondAttribute="trailing" constant="32" id="zns-sj-MYd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Next" destination="gXt-8A-wvb" id="uF1-zO-2zr"/>
+                        <outlet property="Return" destination="yXg-9t-ugV" id="z0K-EB-ckX"/>
                         <outlet property="imageView" destination="id2-g3-6IX" id="g3c-0H-nEK"/>
+                        <outlet property="play_and_stop" destination="LZ1-68-Mmx" id="F9W-gx-0cZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,7 +95,7 @@
                                 <rect key="frame" x="172" y="556" width="31" height="30"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <segue destination="htd-kz-dzC" kind="unwind" unwindAction="unwind:" id="AQL-LF-2Fo"/>
+                                    <segue destination="htd-kz-dzC" kind="unwind" unwindAction="unwind:" id="WdK-0J-pqu"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fBU-wg-IsR">
