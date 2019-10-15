@@ -32,10 +32,10 @@ class ViewController: UIViewController {
     @objc func updatepic(_ timer: Timer){
         if self.index == 2 {
             self.index = 0
-       } else {
-       self.index+=1
-       }
-       imageView.image = images[index]
+        } else {
+            self.index+=1
+        }
+        imageView.image = images[index]
     }
     
     
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         if self.index == 2 {
             self.index = 0
         } else {
-        self.index+=1
+            self.index+=1
         }
         imageView.image = images[index]
     }
@@ -75,21 +75,21 @@ class ViewController: UIViewController {
         
     }
     
-  
+    
     @IBAction func unwind(_ unwindSegue: UIStoryboardSegue ) {
-
+        
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ResultviewController:ResultViewController = segue.destination as! ResultViewController
-         ResultviewController.image2 = self.images[self.index]
+        ResultviewController.image2 = self.images[self.index]
         if self.timer != nil{
-        self.timer.invalidate()
+            self.timer.invalidate()
             self.timer = nil
             self.play_and_stop.setTitle("再生", for: .normal)
         }
-
+        
         Next.isEnabled = true
         Return.isEnabled = true
     }
